@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
 
   has_many :abouts
+  has_many :activities
 end

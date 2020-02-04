@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	
+  resources :activities
   resources :abouts
   devise_for :users
   root 'abouts#index'

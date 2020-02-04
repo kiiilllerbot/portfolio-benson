@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@activity) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description,input_html:{rows:6} %>
+    <%= f.association :user ,as: :hidden %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit , :class=>"btn btn-success"%>
+    <%= link_to "Back", activities_path, :class=>"btn btn-info"%>
+  </div>
+<% end %>

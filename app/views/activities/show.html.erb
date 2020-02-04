@@ -1,0 +1,48 @@
+  <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('/assets/header.jpg');">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand">
+            <h3 class="text-white" style="text-align: center"><%= @activity.title %></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="main main-raised">
+    <div class="profile-content" style="padding-bottom: 5vh;padding-top: 5vh">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+			<h4 class="lead text-justify"><%= @activity.description %></h4>
+			<hr class="my-2">
+			<div class="text-center">
+							 <%= link_to activities_path do %>
+                <button class="btn btn-primary">
+                  <i class="fas fa-arrow-left"></i>
+                </button>
+              <% end %>
+
+              <%= link_to edit_activity_path(@activity) do %>
+                <button class="btn btn-info">
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+              <% end %>
+
+             	<%= link_to activity_path(@activity),method: :delete,data:{confirm:'Are you sure?'} do %>
+                <button class="btn btn-danger">
+                  <i class="fas fa-trash"></i>
+                </button>
+              <% end %>
+
+               <%= link_to new_activity_path do %>
+                <button class="btn btn-success">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              <% end %>
+			</div>
+          </div>
+        </div> 
+      </div>
+    </div>
+</div>
