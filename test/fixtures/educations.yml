@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  degree: MyString
+  institution: MyString
+  place: MyString
+  description: MyText
+  user: one
+
+two:
+  degree: MyString
+  institution: MyString
+  place: MyString
+  description: MyText
+  user: two

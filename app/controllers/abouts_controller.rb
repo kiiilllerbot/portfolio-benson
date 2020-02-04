@@ -1,6 +1,6 @@
 class AboutsController < ApplicationController
   before_action :set_about, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!, except:[:index]
+  before_action :authenticate_user!, except:[:index, :show]
 
   def index
     @abouts = About.all
@@ -9,16 +9,15 @@ class AboutsController < ApplicationController
   def edit
   end
 
+  def show
+  end
+
   def update
-    respond_to do |format|
       if @about.update(about_params)
-        format.html { redirect_to root_path, notice: 'Information was successfully updated.' }
-        format.json { render :show, status: :ok, location: @about }
+        redirect_to root_path, notice: 'Information was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @about.errors, status: :unprocessable_entity }
+        redirect_to root_path
       end
-    end
   end
 
   def destroy

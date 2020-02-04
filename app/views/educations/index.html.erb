@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand">
-            <h3 class="text-white" style="text-align: center">My Activities</h3>
+            <h3 class="text-white" style="text-align: center">My Education</h3>
           </div>
         </div>
       </div>
@@ -12,22 +12,21 @@
 <div class="main main-raised">
     <div class="profile-content" style="padding-bottom: 5vh;padding-top: 5vh">
       <div class="container">
-        <div class="row text-center">
-          <% @activities.each do |activity| %>
-          <div class="col-12 ml-auto mr-auto">
-            
-              <%= link_to activity do %>
-              <button class="btn btn-primary">
-                <%= activity.title %>
-              </button>
-             
+        <div class="row">
+          <% @educations.each do |education| %>
+            <div class="col-12 ml-auto mr-auto text-center">
+              <%= link_to education do %>
+                <button class="btn btn-primary">
+                  <%= education.degree %>
+                </button>
+              <% end %>
               </div>
-                 <% end %>
             <% end %>
+            <br>
           </div>
           <div class="row">
             <div class="cl-md-6 ml-auto mr-auto">
-              <%= link_to new_activity_path do %>
+              <%= link_to new_education_path do %>
                 <button class="btn btn-success btn-block">
                   <i class="fas fa-plus-circle"></i>
                 </button>

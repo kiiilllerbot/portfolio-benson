@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@education) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :degree %>
+    <%= f.input :institution %>
+    <%= f.input :place %>
+    <%= f.input :description,input_html:{rows:6} %>
+    <%= f.association :user ,as: :hidden%>
+  </div>
+
+  <div class="form-actions">
+        <%= f.button :submit , :class=>"btn btn-success"%>
+    <%= link_to "Back", educations_path, :class=>"btn btn-info"%>
+  </div>
+<% end %>
