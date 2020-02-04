@@ -11,19 +11,19 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item <%= active_class(abouts_path) %>">
             <%= link_to "About",abouts_path,:class=>"nav-link"%>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= active_class(activities_path) %>">
             <%= link_to "Activities",activities_path,:class=>"nav-link"%>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= active_class(educations_path) %>">
             <%= link_to "Education",educations_path,:class=>"nav-link"%>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= active_class(qualifications_path) %>">
             <%= link_to "Qualification",qualifications_path,:class=>"nav-link"%>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= active_class(interests_path) %>">
             <%= link_to "Interests",interests_path,:class=>"nav-link"%>
           </li>
           <% if user_signed_in? %>

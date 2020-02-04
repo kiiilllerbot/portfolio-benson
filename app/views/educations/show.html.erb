@@ -26,6 +26,8 @@
                 </button>
               <% end %>
 
+              <% if user_signed_in? %>
+
               <%= link_to edit_education_path(@education) do %>
                 <button class="btn btn-info">
                   <i class="fas fa-pencil-alt"></i>
@@ -42,6 +44,8 @@
                 <button class="btn btn-success">
                   <i class="fas fa-arrow-right"></i>
                 </button>
+              <% end %>
+
               <% end %>
       </div>
           </div>

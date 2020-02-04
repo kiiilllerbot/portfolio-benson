@@ -51,7 +51,9 @@
               <i class="fas fa-quote-right"></i>
             </h3>
           <% end %>
-          <%= link_to "Edit About Information", edit_about_path(about),:class=>"btn btn-info"%>
+          <% if user_signed_in? %>
+            <%= link_to "Edit About Information", edit_about_path(about),:class=>"btn btn-info"%>
+          <% end %>
         </div>
         <% end %>
       </div>

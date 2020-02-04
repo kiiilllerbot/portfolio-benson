@@ -24,6 +24,8 @@
             <% end %>
             <br>
           </div>
+
+          <% if user_signed_in? %>
           <div class="row">
             <div class="cl-md-6 ml-auto mr-auto">
               <%= link_to new_interest_path do %>
@@ -33,6 +35,7 @@
               <% end %>
             </div>
           </div>
+          <% end %>
         </div> 
       </div>
     </div>
