@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	
+  resources :qualifications
   resources :educations
   resources :activities
   resources :abouts

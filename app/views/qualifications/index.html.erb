@@ -1,0 +1,39 @@
+  <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('/assets/header.jpg');">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand">
+            <h3 class="text-white" style="text-align: center">My Qualifications</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="main main-raised">
+    <div class="profile-content" style="padding-bottom: 5vh;padding-top: 5vh">
+      <div class="container">
+        <div class="row">
+          <% @qualifications.each do |qualification| %>
+            <div class="col-12 ml-auto mr-auto text-center">
+              <%= link_to qualification do %>
+                <button class="btn btn-primary">
+                  <%= qualification.name %>
+                </button>
+              <% end %>
+              </div>
+            <% end %>
+            <br>
+          </div>
+          <div class="row">
+            <div class="cl-md-6 ml-auto mr-auto">
+              <%= link_to new_qualification_path do %>
+                <button class="btn btn-success btn-block">
+                  <i class="fas fa-plus-circle"></i>
+                </button>
+              <% end %>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+</div>
