@@ -1,0 +1,59 @@
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('/assets/header.jpg');"></div>
+
+<div class="main main-raised">
+    <div class="profile-content" style="padding-bottom: 5vh">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="profile">
+              <div class="avatar">
+                <img src="/assets/ben.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+              </div>
+              <div class="name">
+                <h3 class="title">Benson Willie John</h3>
+                <% @abouts.each do |about| %>
+                <h6><%= about.title %></h6>
+
+                <% if user_signed_in? %>
+                  <% if about.fb_link? %>
+                    <%= link_to "http://#{about.fb_link}",:target=>"_blank",:class=>"btn btn-just-icon btn-link btn-facebook" do %>
+                      <i class="fab fa-facebook-f"></i>
+                    <% end %>
+                  <% end %>
+                <% end %>
+
+                <% if user_signed_in? %>
+                  <% if about.ig_link? %>
+                    <%= link_to "http://#{about.ig_link}",:target=>"_blank",:class=>"btn btn-just-icon btn-link btn-instagram" do %>
+                      <i class="fab fa-instagram"></i>
+                    <% end %>
+                  <% end %>
+                <% end %>
+
+                <% if user_signed_in? %>
+                  <% if about.twitter_link? %>
+                    <%= link_to "http://#{about.twitter_link}",:target=>"_blank",:class=>"btn btn-just-icon btn-link btn-twitter" do %>
+                      <i class="fab fa-twitter"></i>
+                    <% end %>
+                  <% end %>
+                <% end %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="description text-center">
+          <p><%= about.description %></p>
+          <% if about.quote? %>
+            <h3>
+              <i class="fas fa-quote-left"></i>
+              <%= about.quote %>
+              <i class="fas fa-quote-right"></i>
+            </h3>
+          <% end %>
+          <%= link_to "Edit About Information", edit_about_path(about),:class=>"btn btn-info"%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>

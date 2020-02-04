@@ -1,0 +1,45 @@
+<% if flash[:notice] %>
+  <div id="notice_wrapper">
+    <div class="alert alert-success">
+        <div class="container">
+          <div class="alert-icon">
+            <i class="material-icons">check</i>
+          </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+          </button>
+          <b><%= flash[:notice] %></b>
+        </div>
+    </div>
+  </div>
+<% elsif flash[:error] %>
+<div id="notice_wrapper">
+      <div class="alert alert-danger">
+        <div class="container">
+          <div class="alert-icon">
+            <i class="material-icons">error_outline</i>
+          </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+          </button>
+          <b><%= flash[:error] %></b>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<% elsif flash[:alert] %>
+<div id="notice_wrapper">
+    <div class="alert alert-warning">
+        <div class="container">
+          <div class="alert-icon">
+            <i class="material-icons">warning</i>
+          </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+          </button>
+          <b><%= flash[:alert] %></b>
+        </div>
+    </div>
+</div>
+<% end %>
