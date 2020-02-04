@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :activities
   has_many :educations
   has_many :qualifications
+  has_many :interests
 end
